@@ -66,13 +66,13 @@ async function isOK()
     return await hasClick();
 }
 
-for ( let i = 0; i < 5; i++ ) {
-    // debugger;
-    sequence.push( getRamdomNumber() );
-    showSequence();
-    let next = isOK();
-    console.log(next);
-}
+// for ( let i = 0; i < 5; i++ ) {
+//     // debugger;
+//     sequence.push( getRamdomNumber() );
+//     showSequence();
+//     let next = isOK();
+//     console.log(next);
+// }
 
 function exe()
 {
