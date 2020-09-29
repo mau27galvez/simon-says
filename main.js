@@ -102,10 +102,11 @@ while ( true ) {
         userInput.push(2);
         if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
         {
-            reject( "EL USUARIO SE EQUIVICO" );
+            isOk = false;
         } else {
             if ( userInput.length === sequence.length ) {
-                resolve();
+                alert("Todo ok");
+                exe();
             }
         };
     });
@@ -114,10 +115,11 @@ while ( true ) {
         userInput.push(3);
         if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
         {
-            reject( "EL USUARIO SE EQUIVICO" );
+            isOk = false;
         } else {
             if ( userInput.length === sequence.length ) {
-                resolve();
+                alert("Todo ok");
+                exe();
             }
         };
     });
@@ -126,10 +128,11 @@ while ( true ) {
         userInput.push(4);
         if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
         {
-            reject( false );
+            isOk = false;
         } else {
             if ( userInput.length === sequence.length ) {
-                resolve( true );
+                alert("Todo ok");
+                exe();
             }
         };
     });
