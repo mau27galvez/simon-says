@@ -84,62 +84,59 @@ function exe()
 
 exe();
 
-while ( false ) {
-    console.log("fdd");
-    green.addEventListener( "click", () => {
-        userInput.push(1);
-        if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-        {
-            isOk = false;
-        } else {
-            if ( userInput.length === sequence.length ) {
-                alert("Todo ok");
-                exe();
-            }
-        };
-    });
-    
-    red.addEventListener( "click", () => {
-        userInput.push(2);
-        if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-        {
-            isOk = false;
-        } else {
-            if ( userInput.length === sequence.length ) {
-                alert("Todo ok");
-                exe();
-            }
-        };
-    });
-    
-    yellow.addEventListener( "click", () => {
-        userInput.push(3);
-        if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-        {
-            isOk = false;
-        } else {
-            if ( userInput.length === sequence.length ) {
-                alert("Todo ok");
-                exe();
-            }
-        };
-    });
-    
-    blue.addEventListener( "click", () => {
-        userInput.push(4);
-        if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-        {
-            isOk = false;
-        } else {
-            if ( userInput.length === sequence.length ) {
-                alert("Todo ok");
-                exe();
-            }
-        };
-    });
+green.addEventListener( "click", () => {
+    userInput.push(1);
+    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+    {
+        isOk = false;
+    } else {
+        if ( userInput.length === sequence.length ) {
+            alert("Todo ok");
+            exe();
+        }
+    };
+});
 
-    if( !isOk ) {
-        sequence = [];
-        alert("PERDISTE :(");
-    }
+red.addEventListener( "click", () => {
+    userInput.push(2);
+    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+    {
+        isOk = false;
+    } else {
+        if ( userInput.length === sequence.length ) {
+            alert("Todo ok");
+            exe();
+        }
+    };
+});
+
+yellow.addEventListener( "click", () => {
+    userInput.push(3);
+    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+    {
+        isOk = false;
+    } else {
+        if ( userInput.length === sequence.length ) {
+            alert("Todo ok");
+            exe();
+        }
+    };
+});
+
+blue.addEventListener( "click", () => {
+    userInput.push(4);
+    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+    {
+        isOk = false;
+    } else {
+        if ( userInput.length === sequence.length ) {
+            alert("Todo ok");
+            exe();
+        }
+    };
+});
+
+if( !isOk ) {
+    sequence = [];
+    alert("PERDISTE :(");
 }
