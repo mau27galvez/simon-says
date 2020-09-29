@@ -11,6 +11,7 @@ const NUMBER_COLOR = {
 };
 let sequence = [];
 let userInput;
+let isOk = true;
 
 function getRamdomNumber() 
 {
@@ -49,62 +50,16 @@ async function showSequence()
     userInput = [];
 }
 
-function hasClick()
-{
-    return new Promise( ( resolve, reject ) => {
-        setTimeout( function() {
-            let userInput = [];
+// function hasClick()
+// {
+//     return new Promise( ( resolve, reject ) => {
+//         setTimeout( function() {
+//             let userInput = [];
     
-            green.addEventListener( "click", () => {
-                userInput.push(1);
-                if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-                {
-                    reject( "EL USUARIO SE EQUIVICO" );
-                } else {
-                    if ( userInput.length === sequence.length ) {
-                        resolve();
-                    }
-                };
-            });
-            
-            red.addEventListener( "click", () => {
-                userInput.push(2);
-                if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-                {
-                    reject( "EL USUARIO SE EQUIVICO" );
-                } else {
-                    if ( userInput.length === sequence.length ) {
-                        resolve();
-                    }
-                };
-            });
-            
-            yellow.addEventListener( "click", () => {
-                userInput.push(3);
-                if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-                {
-                    reject( "EL USUARIO SE EQUIVICO" );
-                } else {
-                    if ( userInput.length === sequence.length ) {
-                        resolve();
-                    }
-                };
-            });
-            
-            blue.addEventListener( "click", () => {
-                userInput.push(4);
-                if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-                {
-                    reject( false );
-                } else {
-                    if ( userInput.length === sequence.length ) {
-                        resolve( true );
-                    }
-                };
-            });
-        }, Infinity );
-    });
-}
+
+//         }, 200000000 );
+//     });
+// }
 
 async function isOK()
 {
@@ -117,4 +72,70 @@ for ( let i = 0; i < 5; i++ ) {
     showSequence();
     let next = isOK();
     console.log(next);
+}
+
+function exe()
+{
+    sequence.push( getRamdomNumber() );
+    showSequence();
+    // let next = isOK();
+    console.log(next);
+}
+
+exe();
+
+while ( true ) {
+    green.addEventListener( "click", () => {
+        userInput.push(1);
+        if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+        {
+            isOk = false;
+        } else {
+            if ( userInput.length === sequence.length ) {
+                alert("Todo ok");
+                exe();
+            }
+        };
+    });
+    
+    red.addEventListener( "click", () => {
+        userInput.push(2);
+        if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+        {
+            reject( "EL USUARIO SE EQUIVICO" );
+        } else {
+            if ( userInput.length === sequence.length ) {
+                resolve();
+            }
+        };
+    });
+    
+    yellow.addEventListener( "click", () => {
+        userInput.push(3);
+        if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+        {
+            reject( "EL USUARIO SE EQUIVICO" );
+        } else {
+            if ( userInput.length === sequence.length ) {
+                resolve();
+            }
+        };
+    });
+    
+    blue.addEventListener( "click", () => {
+        userInput.push(4);
+        if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+        {
+            reject( false );
+        } else {
+            if ( userInput.length === sequence.length ) {
+                resolve( true );
+            }
+        };
+    });
+
+    if( !isOk ) {
+        sequence = [];
+        alert("PERDISTE :(");
+    }
 }
