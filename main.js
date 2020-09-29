@@ -11,7 +11,7 @@ const NUMBER_COLOR = {
 };
 let sequence = [];
 let userInput;
-let isOk = true;
+let isOk = false;
 
 function getRamdomNumber() 
 {
@@ -78,69 +78,45 @@ function exe()
 {
     sequence.push( getRamdomNumber() );
     showSequence();
+    console.log(sequence);
     // let next = isOK();
     // console.log(next);
+}
+
+function check()
+{
+    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+    {
+        sequence = [];
+        alert("PERDISTE :(");
+        exe();
+    } else {
+        if ( userInput.length === sequence.length ) {
+            alert("Todo ok");
+            userInput = [];
+            exe();
+        }
+    };
 }
 
 exe();
 
 green.addEventListener( "click", () => {
     userInput.push(1);
-    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-    {
-        isOk = false;
-    } else {
-        if ( userInput.length === sequence.length ) {
-            alert("Todo ok");
-            userInput = [];
-            exe();
-        }
-    };
+    check()
 });
 
 red.addEventListener( "click", () => {
     userInput.push(2);
-    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-    {
-        isOk = false;
-    } else {
-        if ( userInput.length === sequence.length ) {
-            alert("Todo ok");
-            userInput = [];
-            exe();
-        }
-    };
+    check()
 });
 
 yellow.addEventListener( "click", () => {
     userInput.push(3);
-    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-    {
-        isOk = false;
-    } else {
-        if ( userInput.length === sequence.length ) {
-            alert("Todo ok");
-            userInput = [];
-            exe();
-        }
-    };
+    check()
 });
 
 blue.addEventListener( "click", () => {
     userInput.push(4);
-    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
-    {
-        isOk = false;
-    } else {
-        if ( userInput.length === sequence.length ) {
-            userInput = [];
-            alert("Todo ok");
-            exe();
-        }
-    };
+    check()
 });
-
-if( !isOk ) {
-    sequence = [];
-    alert("PERDISTE :(");
-}
