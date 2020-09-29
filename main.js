@@ -79,7 +79,7 @@ function exe()
     sequence.push( getRamdomNumber() );
     showSequence();
     // let next = isOK();
-    console.log(next);
+    // console.log(next);
 }
 
 exe();
