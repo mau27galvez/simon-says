@@ -84,7 +84,8 @@ function exe()
 
 exe();
 
-while ( true ) {
+while ( false ) {
+    console.log("fdd");
     green.addEventListener( "click", () => {
         userInput.push(1);
         if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
