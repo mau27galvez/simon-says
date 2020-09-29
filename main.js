@@ -92,6 +92,7 @@ green.addEventListener( "click", () => {
     } else {
         if ( userInput.length === sequence.length ) {
             alert("Todo ok");
+            userInput = [];
             exe();
         }
     };
@@ -105,6 +106,7 @@ red.addEventListener( "click", () => {
     } else {
         if ( userInput.length === sequence.length ) {
             alert("Todo ok");
+            userInput = [];
             exe();
         }
     };
@@ -118,6 +120,7 @@ yellow.addEventListener( "click", () => {
     } else {
         if ( userInput.length === sequence.length ) {
             alert("Todo ok");
+            userInput = [];
             exe();
         }
     };
@@ -130,6 +133,7 @@ blue.addEventListener( "click", () => {
         isOk = false;
     } else {
         if ( userInput.length === sequence.length ) {
+            userInput = [];
             alert("Todo ok");
             exe();
         }
