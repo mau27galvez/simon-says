@@ -20,8 +20,8 @@ body
 
 main 
 {
-    width: 800px;
-    height: 800px;
+    width: 50vh;
+    height: 50vh;
     margin: 0 auto;  
     display: flex;
     flex-wrap: wrap;
@@ -31,8 +31,8 @@ main
 
 .color
 {
-    width: 400px;
-    height: 400px;
+    width: 50%;
+    height: 50%;
 }
 
 #green
