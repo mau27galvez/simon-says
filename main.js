@@ -25,7 +25,7 @@ function toggleOpacity( color )
 {
     return new Promise( ( resolve, reject ) => {
         setTimeout( function() {
-            NUMBER_COLOR[color].style = "opacity: 1;";
+            NUMBER_COLOR[color].classList.remove("click", `shadow-${NUMBER_COLOR[color].id}`);
             resolve();
         }, SHOW_TIME );
     });
@@ -44,7 +44,7 @@ async function showSequence()
 {
     for ( color of sequence ) {
         console.log(sequence);
-        NUMBER_COLOR[color].style = "opacity: 0.6;"
+        NUMBER_COLOR[color].classList.add("click", `shadow-${NUMBER_COLOR[color].id}`);
         await toggleOpacity( color );
         await timeOut();
     }
