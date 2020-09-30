@@ -35,6 +35,12 @@ main
     height: 50%;
 }
 
+.click
+{
+    opacity: 0.7;
+}
+
+
 #green
 {
     background-color: #00ff00;  
@@ -43,6 +49,11 @@ main
 #green:active
 {
     opacity: 0.7;
+    box-shadow: -20px -20px 20px 20px #00ff00;
+}
+
+.shadow-green
+{
     box-shadow: -20px -20px 20px 20px #00ff00;
 }
 
@@ -57,6 +68,11 @@ main
     box-shadow: 20px -20px 20px 20px #ff0000;
 }
 
+.shadow-red
+{
+    box-shadow: 20px -20px 20px 20px #ff0000;
+}
+
 #yellow
 {
     background-color: #ffff00;
@@ -68,6 +84,11 @@ main
     box-shadow: -20px 20px 20px 20px #ffff00;
 }
 
+.shadow-yellow
+{
+    box-shadow: -20px 20px 20px 20px #ffff00;
+}
+
 #blue
 {
     background-color: #0000ff;    
@@ -76,5 +97,10 @@ main
 #blue:active
 {
     opacity: 0.7;
+    box-shadow: 20px 20px 20px 20px #0000ff;
+}
+
+.shadow-blue
+{
     box-shadow: 20px 20px 20px 20px #0000ff;
 }
