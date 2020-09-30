@@ -21,7 +21,7 @@ class Game
 {
     constructor()
     {
-        exe();
+        this.exe();
 
         green.addEventListener( "click", () => {
             userInput.push(1);
@@ -73,8 +73,8 @@ class Game
         for ( color of sequence ) {
             console.log(sequence);
             NUMBER_COLOR[color].classList.add("click", `shadow-${NUMBER_COLOR[color].id}`);
-            await toggleOpacity( color );
-            await timeOut();
+            await this.toggleOpacity( color );
+            await this.timeOut();
         }
     
         userInput = [];
@@ -82,8 +82,8 @@ class Game
     
     exe()
     {
-        sequence.push( getRamdomNumber() );
-        showSequence();
+        sequence.push( this.getRamdomNumber() );
+        this.showSequence();
         console.log(sequence);
     }
     
@@ -93,12 +93,12 @@ class Game
         {
             sequence = [];
             alert("PERDISTE :(");
-            exe();
+            this.exe();
         } else {
             if ( userInput.length === sequence.length ) {
                 alert("Todo ok");
                 userInput = [];
-                exe();
+                this.exe();
             }
         };
     }
@@ -108,5 +108,8 @@ class Game
 
 function start()
 {
+    start_button.classList.add( "hide" );
     const game = new Game();
 }
+
+start_button.addEventListener( "click", start );
