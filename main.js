@@ -42,7 +42,6 @@ function timeOut()
 
 async function showSequence()
 {
-    // debugger;
     for ( color of sequence ) {
         console.log(sequence);
         NUMBER_COLOR[color].style = "opacity: 0.6;"
