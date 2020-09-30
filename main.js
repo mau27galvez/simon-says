@@ -16,64 +16,73 @@ let isOk = false;
 const TIMEOUT = 500;
 const SHOW_TIME = 1500; 
 
-function getRamdomNumber() 
+class Game
 {
-    return Math.floor( Math.random() * 4 + 1 );
-}
-
-function toggleOpacity( color )
-{
-    return new Promise( ( resolve, reject ) => {
-        setTimeout( function() {
-            NUMBER_COLOR[color].classList.remove("click", `shadow-${NUMBER_COLOR[color].id}`);
-            resolve();
-        }, SHOW_TIME );
-    });
-}
-
-function timeOut()
-{
-    return new Promise( ( resolve, reject ) => {
-        setTimeout( function() {
-            resolve();
-        }, TIMEOUT );
-    });
-}
-
-async function showSequence()
-{
-    for ( color of sequence ) {
-        console.log(sequence);
-        NUMBER_COLOR[color].classList.add("click", `shadow-${NUMBER_COLOR[color].id}`);
-        await toggleOpacity( color );
-        await timeOut();
-    }
-
-    userInput = [];
-}
-
-function exe()
-{
-    sequence.push( getRamdomNumber() );
-    showSequence();
-    console.log(sequence);
-}
-
-function check()
-{
-    if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+    constructor()
     {
-        sequence = [];
-        alert("PERDISTE :(");
-        exe();
-    } else {
-        if ( userInput.length === sequence.length ) {
-            alert("Todo ok");
-            userInput = [];
-            exe();
+
+    }
+    
+    getRamdomNumber() 
+    {
+        return Math.floor( Math.random() * 4 + 1 );
+    }
+    
+    toggleOpacity( color )
+    {
+        return new Promise( ( resolve, reject ) => {
+            setTimeout( function() {
+                NUMBER_COLOR[color].classList.remove("click", `shadow-${NUMBER_COLOR[color].id}`);
+                resolve();
+            }, SHOW_TIME );
+        });
+    }
+    
+    timeOut()
+    {
+        return new Promise( ( resolve, reject ) => {
+            setTimeout( function() {
+                resolve();
+            }, TIMEOUT );
+        });
+    }
+    
+    async showSequence()
+    {
+        for ( color of sequence ) {
+            console.log(sequence);
+            NUMBER_COLOR[color].classList.add("click", `shadow-${NUMBER_COLOR[color].id}`);
+            await toggleOpacity( color );
+            await timeOut();
         }
-    };
+    
+        userInput = [];
+    }
+    
+    exe()
+    {
+        sequence.push( getRamdomNumber() );
+        showSequence();
+        console.log(sequence);
+    }
+    
+    check()
+    {
+        if( sequence[ userInput.length - 1 ] !== userInput[ userInput.length - 1 ] )
+        {
+            sequence = [];
+            alert("PERDISTE :(");
+            exe();
+        } else {
+            if ( userInput.length === sequence.length ) {
+                alert("Todo ok");
+                userInput = [];
+                exe();
+            }
+        };
+    }
 }
+
 
 exe();
 
