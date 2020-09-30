@@ -20,7 +20,27 @@ class Game
 {
     constructor()
     {
+        exe();
 
+        green.addEventListener( "click", () => {
+            userInput.push(1);
+            check()
+        });
+        
+        red.addEventListener( "click", () => {
+            userInput.push(2);
+            check()
+        });
+        
+        yellow.addEventListener( "click", () => {
+            userInput.push(3);
+            check()
+        });
+        
+        blue.addEventListener( "click", () => {
+            userInput.push(4);
+            check()
+        });
     }
     
     getRamdomNumber() 
@@ -82,26 +102,3 @@ class Game
         };
     }
 }
-
-
-exe();
-
-green.addEventListener( "click", () => {
-    userInput.push(1);
-    check()
-});
-
-red.addEventListener( "click", () => {
-    userInput.push(2);
-    check()
-});
-
-yellow.addEventListener( "click", () => {
-    userInput.push(3);
-    check()
-});
-
-blue.addEventListener( "click", () => {
-    userInput.push(4);
-    check()
-});
