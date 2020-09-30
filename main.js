@@ -1,8 +1,8 @@
-let main = document.getElementsByTagName("main");
-let green = document.getElementById("green");
-let red = document.getElementById("red");
-let yellow = document.getElementById("yellow");
-let blue = document.getElementById("blue");
+const main = document.getElementsByTagName("main");
+const green = document.getElementById("green");
+const red = document.getElementById("red");
+const yellow = document.getElementById("yellow");
+const blue = document.getElementById("blue");
 const NUMBER_COLOR = {
     1: green,
     2: red,
