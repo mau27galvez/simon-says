@@ -1,4 +1,5 @@
 const main = document.getElementsByTagName("main");
+const start_button = document.getElementById("start");
 const green = document.getElementById("green");
 const red = document.getElementById("red");
 const yellow = document.getElementById("yellow");
@@ -101,4 +102,11 @@ class Game
             }
         };
     }
+}
+
+
+
+function start()
+{
+    const game = new Game();
 }
