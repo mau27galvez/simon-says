@@ -13,6 +13,9 @@ let sequence = [];
 let userInput;
 let isOk = false;
 
+const TIMEOUT = 500;
+const SHOW_TIME = 1500; 
+
 function getRamdomNumber() 
 {
     return Math.floor( Math.random() * 4 + 1 );
@@ -24,7 +27,7 @@ function toggleOpacity( color )
         setTimeout( function() {
             NUMBER_COLOR[color].style = "opacity: 1;";
             resolve();
-        }, 2000 );
+        }, SHOW_TIME );
     });
 }
 
@@ -33,7 +36,7 @@ function timeOut()
     return new Promise( ( resolve, reject ) => {
         setTimeout( function() {
             resolve();
-        }, 1000 );
+        }, TIMEOUT );
     });
 }
 
@@ -50,37 +53,11 @@ async function showSequence()
     userInput = [];
 }
 
-// function hasClick()
-// {
-//     return new Promise( ( resolve, reject ) => {
-//         setTimeout( function() {
-//             let userInput = [];
-    
-
-//         }, 200000000 );
-//     });
-// }
-
-async function isOK()
-{
-    return await hasClick();
-}
-
-// for ( let i = 0; i < 5; i++ ) {
-//     // debugger;
-//     sequence.push( getRamdomNumber() );
-//     showSequence();
-//     let next = isOK();
-//     console.log(next);
-// }
-
 function exe()
 {
     sequence.push( getRamdomNumber() );
     showSequence();
     console.log(sequence);
-    // let next = isOK();
-    // console.log(next);
 }
 
 function check()
