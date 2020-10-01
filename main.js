@@ -99,13 +99,13 @@ class Game
         }
     
         userInput = [];
+        this.addEventListeners();
     }
     
     exe()
     {
         sequence.push( this.getRamdomNumber() );
         this.showSequence();
-        this.addEventListeners();
         console.log(sequence);
     }
     
