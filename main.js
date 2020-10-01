@@ -21,27 +21,48 @@ class Game
 {
     constructor()
     {
+        this.pushAndCheck = this.pushAndCheck.bind( this );
         this.exe();
+    }
 
-        green.addEventListener( "click", () => {
-            userInput.push(1);
-            check()
-        });
-        
-        red.addEventListener( "click", () => {
-            userInput.push(2);
-            check()
-        });
-        
-        yellow.addEventListener( "click", () => {
-            userInput.push(3);
-            check()
-        });
-        
-        blue.addEventListener( "click", () => {
-            userInput.push(4);
-            check()
-        });
+    addEventListeners()
+    {
+        green.addEventListener( "click", this.pushAndCheck );
+        red.addEventListener( "click", this.pushAndCheck );
+        yellow.addEventListener( "click", this.pushAndCheck );
+        blue.addEventListener( "click", this.pushAndCheck );
+    }
+
+    removeEventListeners()
+    {   
+        debugger;
+        console.log(this);
+        green.removeEventListener( "click", this.pushAndCheck );
+        red.removeEventListener( "click", this.pushAndCheck );
+        yellow.removeEventListener( "click", this.pushAndCheck );
+        blue.removeEventListener( "click", this.pushAndCheck );
+    }
+
+    fromIdToNumber ( id )
+    {
+        switch ( id )
+        {
+            case "green":
+                return 1;
+            case "red":
+                return 2;
+            case "yellow":
+                return 3;
+            case "blue":
+                return 4;
+        }
+    }
+
+    pushAndCheck ( ev )
+    {
+        let element = this.fromIdToNumber( ev.target.id );
+        userInput.push( element );
+        this.check();
     }
     
     getRamdomNumber() 
@@ -70,7 +91,7 @@ class Game
     
     async showSequence()
     {
-        for ( color of sequence ) {
+        for ( const color of sequence ) {
             console.log(sequence);
             NUMBER_COLOR[color].classList.add("click", `shadow-${NUMBER_COLOR[color].id}`);
             await this.toggleOpacity( color );
@@ -84,6 +105,7 @@ class Game
     {
         sequence.push( this.getRamdomNumber() );
         this.showSequence();
+        this.addEventListeners();
         console.log(sequence);
     }
     
@@ -93,11 +115,13 @@ class Game
         {
             sequence = [];
             alert("PERDISTE :(");
+            this.removeEventListeners();
             this.exe();
         } else {
             if ( userInput.length === sequence.length ) {
                 alert("Todo ok");
                 userInput = [];
+                this.removeEventListeners();
                 this.exe();
             }
         };
