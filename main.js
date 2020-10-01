@@ -35,7 +35,6 @@ class Game
 
     removeEventListeners()
     {   
-        debugger;
         console.log(this);
         green.removeEventListener( "click", this.pushAndCheck );
         red.removeEventListener( "click", this.pushAndCheck );
