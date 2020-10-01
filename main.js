@@ -116,7 +116,9 @@ class Game
             sequence = [];
             alert("PERDISTE :(");
             this.removeEventListeners();
-            this.exe();
+            sequence = [];
+            userInput = [];
+            start_button.classList.remove( "hide" );
         } else {
             if ( userInput.length === sequence.length ) {
                 alert("Todo ok");
